@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.7.16 on darwin)" generated="20230301 09:43:00.003" rpa="false" schemaversion="2">
+<suite id="s1" name="Operating System" source="/Volumes/M/robot-scripts/session12/tests/Operating_System.robot">
+<test id="s1-t1" name="Create Some Directories">
+<kw name="Create Base Directory" library="OS">
+<kw name="Create Directory" library="OperatingSystem">
+<arg>${output_directory}</arg>
+<doc>Creates the specified directory.</doc>
+<msg timestamp="20230301 09:43:00.079" level="INFO" html="true">Created directory '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs"&gt;/Volumes/M/robot-scripts/session12/Outputs&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230301 09:43:00.077" endtime="20230301 09:43:00.080"/>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<arg>${output_directory}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<msg timestamp="20230301 09:43:00.082" level="INFO" html="true">Path '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs"&gt;/Volumes/M/robot-scripts/session12/Outputs&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20230301 09:43:00.081" endtime="20230301 09:43:00.082"/>
+</kw>
+<status status="PASS" starttime="20230301 09:43:00.076" endtime="20230301 09:43:00.082"/>
+</kw>
+<kw name="Create Directory 1" library="OS">
+<kw name="Join Path" library="OperatingSystem">
+<var>${directory_path}</var>
+<arg>${output_directory}</arg>
+<arg>${directory_1}</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<msg timestamp="20230301 09:43:00.084" level="INFO">${directory_path} = Outputs/first directory</msg>
+<status status="PASS" starttime="20230301 09:43:00.083" endtime="20230301 09:43:00.084"/>
+</kw>
+<kw name="Create Directory" library="OperatingSystem">
+<arg>${directory_path}</arg>
+<doc>Creates the specified directory.</doc>
+<msg timestamp="20230301 09:43:00.084" level="INFO" html="true">Created directory '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs/first directory"&gt;/Volumes/M/robot-scripts/session12/Outputs/first directory&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230301 09:43:00.084" endtime="20230301 09:43:00.085"/>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<arg>${directory_path}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<msg timestamp="20230301 09:43:00.085" level="INFO" html="true">Path '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs/first directory"&gt;/Volumes/M/robot-scripts/session12/Outputs/first directory&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20230301 09:43:00.085" endtime="20230301 09:43:00.086"/>
+</kw>
+<status status="PASS" starttime="20230301 09:43:00.083" endtime="20230301 09:43:00.086"/>
+</kw>
+<kw name="Create Directory 2" library="OS">
+<kw name="Join Path" library="OperatingSystem">
+<var>${directory_path}</var>
+<arg>${output_directory}</arg>
+<arg>${directory_2}</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<msg timestamp="20230301 09:43:00.088" level="INFO">${directory_path} = Outputs/second directory</msg>
+<status status="PASS" starttime="20230301 09:43:00.087" endtime="20230301 09:43:00.088"/>
+</kw>
+<kw name="Create Directory" library="OperatingSystem">
+<arg>${directory_path}</arg>
+<doc>Creates the specified directory.</doc>
+<msg timestamp="20230301 09:43:00.088" level="INFO" html="true">Created directory '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs/second directory"&gt;/Volumes/M/robot-scripts/session12/Outputs/second directory&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230301 09:43:00.088" endtime="20230301 09:43:00.089"/>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<arg>${directory_path}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<msg timestamp="20230301 09:43:00.089" level="INFO" html="true">Path '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs/second directory"&gt;/Volumes/M/robot-scripts/session12/Outputs/second directory&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20230301 09:43:00.089" endtime="20230301 09:43:00.089"/>
+</kw>
+<status status="PASS" starttime="20230301 09:43:00.086" endtime="20230301 09:43:00.089"/>
+</kw>
+<tag>Operating System</tag>
+<status status="PASS" starttime="20230301 09:43:00.074" endtime="20230301 09:43:00.090"/>
+</test>
+<test id="s1-t2" name="Create Some Files">
+<kw name="Create File 1" library="OS">
+<kw name="Join Path" library="OperatingSystem">
+<var>${file_path}</var>
+<arg>${output_directory}</arg>
+<arg>${directory_1}</arg>
+<arg>${file_1}</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<msg timestamp="20230301 09:43:00.094" level="INFO">${file_path} = Outputs/first directory/first file.txt</msg>
+<status status="PASS" starttime="20230301 09:43:00.093" endtime="20230301 09:43:00.094"/>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>This is some text in the first file</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20230301 09:43:00.095" level="INFO" html="true">Created file '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs/first directory/first file.txt"&gt;/Volumes/M/robot-scripts/session12/Outputs/first directory/first file.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230301 09:43:00.094" endtime="20230301 09:43:00.096"/>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<arg>${file_path}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<msg timestamp="20230301 09:43:00.098" level="INFO" html="true">Path '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs/first directory/first file.txt"&gt;/Volumes/M/robot-scripts/session12/Outputs/first directory/first file.txt&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20230301 09:43:00.097" endtime="20230301 09:43:00.099"/>
+</kw>
+<status status="PASS" starttime="20230301 09:43:00.092" endtime="20230301 09:43:00.100"/>
+</kw>
+<kw name="Create File 2" library="OS">
+<kw name="Join Path" library="OperatingSystem">
+<var>${file_path}</var>
+<arg>${output_directory}</arg>
+<arg>${directory_2}</arg>
+<arg>${file_2}</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<msg timestamp="20230301 09:43:00.104" level="INFO">${file_path} = Outputs/second directory/second file.txt</msg>
+<status status="PASS" starttime="20230301 09:43:00.102" endtime="20230301 09:43:00.104"/>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>This is some text in the second file</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20230301 09:43:00.105" level="INFO" html="true">Created file '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs/second directory/second file.txt"&gt;/Volumes/M/robot-scripts/session12/Outputs/second directory/second file.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230301 09:43:00.104" endtime="20230301 09:43:00.105"/>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<arg>${file_path}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<msg timestamp="20230301 09:43:00.107" level="INFO" html="true">Path '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs/second directory/second file.txt"&gt;/Volumes/M/robot-scripts/session12/Outputs/second directory/second file.txt&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20230301 09:43:00.106" endtime="20230301 09:43:00.107"/>
+</kw>
+<status status="PASS" starttime="20230301 09:43:00.100" endtime="20230301 09:43:00.107"/>
+</kw>
+<kw name="Create File 3" library="OS">
+<kw name="Join Path" library="OperatingSystem">
+<var>${file_path}</var>
+<arg>${output_directory}</arg>
+<arg>${directory_2}</arg>
+<arg>${file_3}</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<msg timestamp="20230301 09:43:00.109" level="INFO">${file_path} = Outputs/second directory/third file.txt</msg>
+<status status="PASS" starttime="20230301 09:43:00.108" endtime="20230301 09:43:00.109"/>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>This is some text in the third file</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20230301 09:43:00.110" level="INFO" html="true">Created file '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs/second directory/third file.txt"&gt;/Volumes/M/robot-scripts/session12/Outputs/second directory/third file.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230301 09:43:00.109" endtime="20230301 09:43:00.110"/>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<arg>${file_path}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<msg timestamp="20230301 09:43:00.110" level="INFO" html="true">Path '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs/second directory/third file.txt"&gt;/Volumes/M/robot-scripts/session12/Outputs/second directory/third file.txt&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20230301 09:43:00.110" endtime="20230301 09:43:00.111"/>
+</kw>
+<status status="PASS" starttime="20230301 09:43:00.107" endtime="20230301 09:43:00.111"/>
+</kw>
+<tag>Operating System</tag>
+<status status="PASS" starttime="20230301 09:43:00.091" endtime="20230301 09:43:00.112"/>
+</test>
+<test id="s1-t3" name="Move a File">
+<kw name="Move File 3 from Directory 2 to Directory 1" library="OS">
+<kw name="Join Path" library="OperatingSystem">
+<var>${source_path}</var>
+<arg>${output_directory}</arg>
+<arg>${directory_2}</arg>
+<arg>${file_3}</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<msg timestamp="20230301 09:43:00.117" level="INFO">${source_path} = Outputs/second directory/third file.txt</msg>
+<status status="PASS" starttime="20230301 09:43:00.115" endtime="20230301 09:43:00.117"/>
+</kw>
+<kw name="Join Path" library="OperatingSystem">
+<var>${target_path}</var>
+<arg>${output_directory}</arg>
+<arg>${directory_1}</arg>
+<arg>${file_3}</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<msg timestamp="20230301 09:43:00.117" level="INFO">${target_path} = Outputs/first directory/third file.txt</msg>
+<status status="PASS" starttime="20230301 09:43:00.117" endtime="20230301 09:43:00.117"/>
+</kw>
+<kw name="Move File" library="OperatingSystem">
+<arg>${source_path}</arg>
+<arg>${target_path}</arg>
+<doc>Moves the source file into the destination.</doc>
+<msg timestamp="20230301 09:43:00.119" level="INFO" html="true">Moved file from '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs/second directory/third file.txt"&gt;/Volumes/M/robot-scripts/session12/Outputs/second directory/third file.txt&lt;/a&gt;' to '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs/first directory/third file.txt"&gt;/Volumes/M/robot-scripts/session12/Outputs/first directory/third file.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230301 09:43:00.118" endtime="20230301 09:43:00.119"/>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<arg>${target_path}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<msg timestamp="20230301 09:43:00.120" level="INFO" html="true">Path '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs/first directory/third file.txt"&gt;/Volumes/M/robot-scripts/session12/Outputs/first directory/third file.txt&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20230301 09:43:00.119" endtime="20230301 09:43:00.120"/>
+</kw>
+<kw name="Should Not Exist" library="OperatingSystem">
+<arg>${source_path}</arg>
+<doc>Fails if the given path (file or directory) exists.</doc>
+<msg timestamp="20230301 09:43:00.121" level="INFO" html="true">Path '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs/second directory/third file.txt"&gt;/Volumes/M/robot-scripts/session12/Outputs/second directory/third file.txt&lt;/a&gt;' does not exist.</msg>
+<status status="PASS" starttime="20230301 09:43:00.120" endtime="20230301 09:43:00.121"/>
+</kw>
+<status status="PASS" starttime="20230301 09:43:00.115" endtime="20230301 09:43:00.121"/>
+</kw>
+<tag>Operating System</tag>
+<status status="PASS" starttime="20230301 09:43:00.113" endtime="20230301 09:43:00.122"/>
+</test>
+<test id="s1-t4" name="Copy a File">
+<kw name="Copy File 1 from Directory 1 to Directory 2" library="OS">
+<kw name="Join Path" library="OperatingSystem">
+<var>${source_path}</var>
+<arg>${output_directory}</arg>
+<arg>${directory_1}</arg>
+<arg>${file_1}</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<msg timestamp="20230301 09:43:00.128" level="INFO">${source_path} = Outputs/first directory/first file.txt</msg>
+<status status="PASS" starttime="20230301 09:43:00.127" endtime="20230301 09:43:00.128"/>
+</kw>
+<kw name="Join Path" library="OperatingSystem">
+<var>${target_path}</var>
+<arg>${output_directory}</arg>
+<arg>${directory_2}</arg>
+<arg>${file_1}</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<msg timestamp="20230301 09:43:00.131" level="INFO">${target_path} = Outputs/second directory/first file.txt</msg>
+<status status="PASS" starttime="20230301 09:43:00.129" endtime="20230301 09:43:00.131"/>
+</kw>
+<kw name="Copy File" library="OperatingSystem">
+<arg>${source_path}</arg>
+<arg>${target_path}</arg>
+<doc>Copies the source file into the destination.</doc>
+<msg timestamp="20230301 09:43:00.135" level="INFO" html="true">Copied file from '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs/first directory/first file.txt"&gt;/Volumes/M/robot-scripts/session12/Outputs/first directory/first file.txt&lt;/a&gt;' to '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs/second directory/first file.txt"&gt;/Volumes/M/robot-scripts/session12/Outputs/second directory/first file.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230301 09:43:00.132" endtime="20230301 09:43:00.135"/>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<arg>${source_path}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<msg timestamp="20230301 09:43:00.136" level="INFO" html="true">Path '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs/first directory/first file.txt"&gt;/Volumes/M/robot-scripts/session12/Outputs/first directory/first file.txt&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20230301 09:43:00.135" endtime="20230301 09:43:00.136"/>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<arg>${target_path}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<msg timestamp="20230301 09:43:00.137" level="INFO" html="true">Path '&lt;a href="file:///Volumes/M/robot-scripts/session12/Outputs/second directory/first file.txt"&gt;/Volumes/M/robot-scripts/session12/Outputs/second directory/first file.txt&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20230301 09:43:00.136" endtime="20230301 09:43:00.137"/>
+</kw>
+<status status="PASS" starttime="20230301 09:43:00.125" endtime="20230301 09:43:00.137"/>
+</kw>
+<tag>Operating System</tag>
+<status status="PASS" starttime="20230301 09:43:00.123" endtime="20230301 09:43:00.137"/>
+</test>
+<doc>This Test is about Operating System Library Keywords</doc>
+<status status="PASS" starttime="20230301 09:43:00.006" endtime="20230301 09:43:00.138"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="0" skip="0">Operating System</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Operating System">Operating System</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

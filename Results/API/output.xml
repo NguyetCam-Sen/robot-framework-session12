@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.7.16 on darwin)" generated="20230301 09:59:44.361" rpa="false" schemaversion="2">
+<suite id="s1" name="API Tests" source="/Volumes/M/robot-scripts/session12/tests/API_Tests.robot">
+<test id="s1-t1" name="Make a Simple REST API Call">
+<kw name="Check Github Username" library="Github">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>${session_alias}</arg>
+<arg>${github_api}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230301 09:59:45.223" level="INFO">Creating Session using : alias=my_github_session, url=https://api.github.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230301 09:59:45.222" endtime="20230301 09:59:45.223"/>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${session_alias}</arg>
+<arg>users/robotframeworktutorial</arg>
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<msg timestamp="20230301 09:59:45.808" level="INFO">Get Request using : alias=my_github_session, uri=users/robotframeworktutorial, headers=None json=None</msg>
+<msg timestamp="20230301 09:59:45.809" level="INFO">/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<msg timestamp="20230301 09:59:45.809" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230301 09:59:45.223" endtime="20230301 09:59:45.810"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230301 09:59:45.814" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20230301 09:59:45.810" endtime="20230301 09:59:45.815"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230301 09:59:45.818" level="INFO">${json} = {'login': 'robotframeworktutorial', 'id': 12807727, 'node_id': 'MDQ6VXNlcjEyODA3NzI3', 'avatar_url': 'https://avatars.githubusercontent.com/u/12807727?v=4', 'gravatar_id': '', 'url': 'https://api.gith...</msg>
+<status status="PASS" starttime="20230301 09:59:45.815" endtime="20230301 09:59:45.818"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${json['login']}</arg>
+<arg>robotframeworktutorial</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230301 09:59:45.819" endtime="20230301 09:59:45.820"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${json}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230301 09:59:45.821" level="INFO">{'login': 'robotframeworktutorial', 'id': 12807727, 'node_id': 'MDQ6VXNlcjEyODA3NzI3', 'avatar_url': 'https://avatars.githubusercontent.com/u/12807727?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/robotframeworktutorial', 'html_url': 'https://github.com/robotframeworktutorial', 'followers_url': 'https://api.github.com/users/robotframeworktutorial/followers', 'following_url': 'https://api.github.com/users/robotframeworktutorial/following{/other_user}', 'gists_url': 'https://api.github.com/users/robotframeworktutorial/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/robotframeworktutorial/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/robotframeworktutorial/subscriptions', 'organizations_url': 'https://api.github.com/users/robotframeworktutorial/orgs', 'repos_url': 'https://api.github.com/users/robotframeworktutorial/repos', 'events_url': 'https://api.github.com/users/robotframeworktutorial/events{/privacy}', 'received_events_url': 'https://api.github.com/users/robotframeworktutorial/received_events', 'type': 'User', 'site_admin': False, 'name': 'Bryan Lamb', 'company': 'RobotFrameworkTutorial.com', 'blog': 'http://www.robotframeworktutorial.com', 'location': 'Charlotte, NC', 'email': None, 'hireable': None, 'bio': 'Visionary tech leader with 20 years software development experience.', 'twitter_username': None, 'public_repos': 1, 'public_gists': 0, 'followers': 18, 'following': 0, 'created_at': '2015-06-09T04:10:30Z', 'updated_at': '2023-01-22T23:36:08Z'}</msg>
+<status status="PASS" starttime="20230301 09:59:45.820" endtime="20230301 09:59:45.821"/>
+</kw>
+<status status="PASS" starttime="20230301 09:59:45.222" endtime="20230301 09:59:45.821"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" starttime="20230301 09:59:45.221" endtime="20230301 09:59:45.821"/>
+</test>
+<test id="s1-t2" name="Display Emoji from Github">
+<kw name="Display Emoji" library="Github">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>${session_alias}</arg>
+<arg>${github_api}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230301 09:59:45.825" level="INFO">Creating Session using : alias=my_github_session, url=https://api.github.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230301 09:59:45.823" endtime="20230301 09:59:45.825"/>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${session_alias}</arg>
+<arg>emojis</arg>
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<msg timestamp="20230301 09:59:46.431" level="INFO">Get Request using : alias=my_github_session, uri=emojis, headers=None json=None</msg>
+<msg timestamp="20230301 09:59:46.431" level="INFO">/usr/local/lib/python3.7/site-packages/urllib3/connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<msg timestamp="20230301 09:59:46.432" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230301 09:59:45.825" endtime="20230301 09:59:46.432"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230301 09:59:46.435" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20230301 09:59:46.432" endtime="20230301 09:59:46.435"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230301 09:59:46.443" level="INFO">${json} = {'+1': 'https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png?v8', '-1': 'https://github.githubassets.com/images/icons/emoji/unicode/1f44e.png?v8', '100': 'https://github.githubassets.c...</msg>
+<status status="PASS" starttime="20230301 09:59:46.435" endtime="20230301 09:59:46.443"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${emoji_url}</var>
+<arg>${json['aerial_tramway']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230301 09:59:46.444" level="INFO">${emoji_url} = https://github.githubassets.com/images/icons/emoji/unicode/1f6a1.png?v8</msg>
+<status status="PASS" starttime="20230301 09:59:46.443" endtime="20230301 09:59:46.444"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${emoji_url}</arg>
+<arg>safari</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230301 09:59:46.445" level="INFO">Opening browser 'safari' to base url 'https://github.githubassets.com/images/icons/emoji/unicode/1f6a1.png?v8'.</msg>
+<status status="PASS" starttime="20230301 09:59:46.444" endtime="20230301 09:59:50.151"/>
+</kw>
+<status status="PASS" starttime="20230301 09:59:45.823" endtime="20230301 09:59:50.153"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" starttime="20230301 09:59:45.822" endtime="20230301 09:59:50.160"/>
+</test>
+<doc>These Tests are about RequestsLibrary Keywords Calling an API</doc>
+<status status="PASS" starttime="20230301 09:59:44.364" endtime="20230301 09:59:50.181"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">API</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="API Tests">API Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

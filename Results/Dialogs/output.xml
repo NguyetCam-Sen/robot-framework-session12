@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.7.16 on darwin)" generated="20230228 18:49:41.477" rpa="false" schemaversion="2">
+<suite id="s1" name="Dialogs" source="/Volumes/M/robot-scripts/session12/tests/Dialogs.robot">
+<test id="s1-t1" name="Logged out user can search for products">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230228 18:49:42.067" level="INFO">Opening browser 'safari' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230228 18:49:42.067" endtime="20230228 18:49:43.895"/>
+</kw>
+<status status="PASS" starttime="20230228 18:49:42.066" endtime="20230228 18:49:43.899"/>
+</kw>
+<kw name="Get Selection From User" library="Dialogs">
+<var>${new_browser}</var>
+<arg>Which browser?</arg>
+<arg>chrome</arg>
+<arg>ie</arg>
+<arg>safari</arg>
+<doc>Pauses test execution and asks user to select a value.</doc>
+<msg timestamp="20230228 18:49:46.978" level="INFO">${new_browser} = safari</msg>
+<status status="PASS" starttime="20230228 18:49:43.901" endtime="20230228 18:49:46.978"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${BROWSER}</arg>
+<arg>${new_browser}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230228 18:49:46.979" level="INFO">${BROWSER} = safari</msg>
+<status status="PASS" starttime="20230228 18:49:46.978" endtime="20230228 18:49:46.979"/>
+</kw>
+<kw name="Search for Products" library="AmazonApp">
+<kw name="Load Start Page" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${START_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230228 18:49:46.980" level="INFO">Opening url 'https://www.amazon.com'</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230228 18:49:49.546" level="FAIL">InvalidSessionIdException: Message: 
+</msg>
+<status status="FAIL" starttime="20230228 18:49:49.528" endtime="20230228 18:49:49.546"/>
+</kw>
+<msg timestamp="20230228 18:49:49.546" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: InvalidSessionIdException: Message: 
+</msg>
+<msg timestamp="20230228 18:49:49.549" level="FAIL">WebDriverException: Message: 
+</msg>
+<status status="FAIL" starttime="20230228 18:49:46.980" endtime="20230228 18:49:49.549"/>
+</kw>
+<status status="FAIL" starttime="20230228 18:49:46.980" endtime="20230228 18:49:49.551"/>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<status status="NOT RUN" starttime="20230228 18:49:49.551" endtime="20230228 18:49:49.552"/>
+</kw>
+<kw name="Search for Products" library="TopNav">
+<status status="NOT RUN" starttime="20230228 18:49:49.552" endtime="20230228 18:49:49.552"/>
+</kw>
+<kw name="Verify Search Completed" library="SearchResults">
+<status status="NOT RUN" starttime="20230228 18:49:49.552" endtime="20230228 18:49:49.552"/>
+</kw>
+<status status="FAIL" starttime="20230228 18:49:46.979" endtime="20230228 18:49:49.553"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<msg timestamp="20230228 18:49:49.571" level="ERROR">When closing browser, received exception: Message: 
+</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230228 18:49:49.572" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20230228 18:49:49.572" endtime="20230228 18:49:49.572"/>
+</kw>
+<msg timestamp="20230228 18:49:49.576" level="FAIL">InvalidSessionIdException: Message: 
+</msg>
+<status status="FAIL" starttime="20230228 18:49:49.554" endtime="20230228 18:49:49.577"/>
+</kw>
+<status status="FAIL" starttime="20230228 18:49:49.554" endtime="20230228 18:49:49.578">InvalidSessionIdException: Message: 
+</status>
+</kw>
+<tag>Web</tag>
+<status status="FAIL" starttime="20230228 18:49:42.065" endtime="20230228 18:49:49.579">WebDriverException: Message: 
+
+
+Also teardown failed:
+InvalidSessionIdException: Message: 
+</status>
+</test>
+<test id="s1-t2" name="Logged out user can add product to cart">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230228 18:49:49.582" level="INFO">Opening browser 'safari' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230228 18:49:49.581" endtime="20230228 18:49:51.383"/>
+</kw>
+<status status="PASS" starttime="20230228 18:49:49.581" endtime="20230228 18:49:51.384"/>
+</kw>
+<kw name="Search for Products" library="AmazonApp">
+<kw name="Load Start Page" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${START_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230228 18:49:51.388" level="INFO">Opening url 'https://www.amazon.com'</msg>
+<status status="PASS" starttime="20230228 18:49:51.388" endtime="20230228 18:49:56.039"/>
+</kw>
+<status status="PASS" starttime="20230228 18:49:51.386" endtime="20230228 18:49:56.040"/>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Sell</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230228 18:49:56.041" endtime="20230228 18:49:56.057"/>
+</kw>
+<status status="PASS" starttime="20230228 18:49:56.040" endtime="20230228 18:49:56.057"/>
+</kw>
+<kw name="Search for Products" library="TopNav">
+<kw name="Input Search Text" library="TopNav">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=twotabsearchtextbox</arg>
+<arg>${SEARCH_TEXT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230228 18:49:56.060" level="INFO">Typing text 'Ferrari 458' into text field 'id=twotabsearchtextbox'.</msg>
+<status status="PASS" starttime="20230228 18:49:56.059" endtime="20230228 18:49:56.256"/>
+</kw>
+<status status="PASS" starttime="20230228 18:49:56.058" endtime="20230228 18:49:56.256"/>
+</kw>
+<kw name="Submit Search" library="TopNav">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=nav-search-submit-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230228 18:49:56.257" level="INFO">Clicking button 'id=nav-search-submit-button'.</msg>
+<status status="PASS" starttime="20230228 18:49:56.257" endtime="20230228 18:49:56.328"/>
+</kw>
+<status status="PASS" starttime="20230228 18:49:56.256" endtime="20230228 18:49:56.329"/>
+</kw>
+<status status="PASS" starttime="20230228 18:49:56.058" endtime="20230228 18:49:56.329"/>
+</kw>
+<kw name="Verify Search Completed" library="SearchResults">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>results for "${SEARCH_TEXT}"</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230228 18:49:56.331" endtime="20230228 18:49:57.260"/>
+</kw>
+<status status="PASS" starttime="20230228 18:49:56.330" endtime="20230228 18:49:57.260"/>
+</kw>
+<status status="PASS" starttime="20230228 18:49:51.385" endtime="20230228 18:49:57.261"/>
+</kw>
+<kw name="Execute Manual Step" library="Dialogs">
+<arg>Do something manually!</arg>
+<arg>It failed!</arg>
+<doc>Pauses test execution until user sets the keyword status.</doc>
+<status status="PASS" starttime="20230228 18:49:57.261" endtime="20230228 18:49:59.605"/>
+</kw>
+<kw name="Select Product from Search Results" library="AmazonApp">
+<kw name="Click Product Link" library="SearchResults">
+<doc>Click on the First Product in the Search Result List</doc>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath=//*[@id="search"]/div[1]/div[1]/div/span[1]/div[1]/div[2]/div/div/div/div/div/div[2]/div/div/div[1]/h2/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230228 18:49:59.609" level="INFO">Clicking link 'xpath=//*[@id="search"]/div[1]/div[1]/div/span[1]/div[1]/div[2]/div/div/div/div/div/div[2]/div/div/div[1]/h2/a'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230228 18:49:59.719" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230228 18:49:59.662" endtime="20230228 18:49:59.719"/>
+</kw>
+<msg timestamp="20230228 18:49:59.733" level="FAIL">Link with locator 'xpath=//*[@id="search"]/div[1]/div[1]/div/span[1]/div[1]/div[2]/div/div/div/div/div/div[2]/div/div/div[1]/h2/a' not found.</msg>
+<status status="FAIL" starttime="20230228 18:49:59.608" endtime="20230228 18:49:59.733"/>
+</kw>
+<status status="FAIL" starttime="20230228 18:49:59.607" endtime="20230228 18:49:59.734"/>
+</kw>
+<kw name="Verify Page Loaded" library="Product">
+<status status="NOT RUN" starttime="20230228 18:49:59.735" endtime="20230228 18:49:59.735"/>
+</kw>
+<status status="FAIL" starttime="20230228 18:49:59.606" endtime="20230228 18:49:59.736"/>
+</kw>
+<kw name="Pause Execution" library="Dialogs">
+<doc>Pauses test execution until user clicks ``Ok`` button.</doc>
+<status status="NOT RUN" starttime="20230228 18:49:59.736" endtime="20230228 18:49:59.736"/>
+</kw>
+<kw name="Add Product to Cart" library="AmazonApp">
+<status status="NOT RUN" starttime="20230228 18:49:59.736" endtime="20230228 18:49:59.737"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230228 18:49:59.738" endtime="20230228 18:49:59.969"/>
+</kw>
+<status status="PASS" starttime="20230228 18:49:59.737" endtime="20230228 18:49:59.970"/>
+</kw>
+<tag>Web</tag>
+<status status="FAIL" starttime="20230228 18:49:49.580" endtime="20230228 18:49:59.970">Link with locator 'xpath=//*[@id="search"]/div[1]/div[1]/div/span[1]/div[1]/div[2]/div/div/div/div/div/div[2]/div/div/div[1]/h2/a' not found.</status>
+</test>
+<doc>Exploring Dialogs Library</doc>
+<status status="FAIL" starttime="20230228 18:49:41.480" endtime="20230228 18:49:59.972"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="2" skip="0">Web</stat>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Dialogs">Dialogs</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230228 18:49:49.546" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: InvalidSessionIdException: Message: 
+</msg>
+<msg timestamp="20230228 18:49:49.571" level="ERROR">When closing browser, received exception: Message: 
+</msg>
+</errors>
+</robot>
